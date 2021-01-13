@@ -1,0 +1,2 @@
+# coherence-eclipse-plugin
+

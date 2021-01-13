@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="coherencePluginBuilder"
+         name="Coherence Plugin Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true">
+         <run
+               class="com.oracle.coherence.eclipse.plugin.builder.CoherencePluginBuilder">
+         </run>
+      </builder>
+   </extension>
+   <extension
+         id="coherencePOFPlugin"
+         name="Coherence POF Plugin"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="com.oracle.coherence.eclipse.plugin.builder.CoherencePOFPlugin">
+         </run>
+      </runtime>
+      <builder
+            id="coherence-eclipse-plugin.coherencePluginBuilder">
+      </builder>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="coherence-eclipse-plugin.coherencePOFPlugin.category"
+            name="Coherence POF Plugin commands">
+      </category>
+      <command
+            categoryId="coherence-eclipse-plugin.coherencePOFPlugin.category"
+            defaultHandler="com.oracle.coherence.eclipse.plugin.builder.AddRemoveCoherencePOFPluginHandler"
+            id="coherence-eclipse-plugin.addRemoveCoherencePOFPlugin"
+            name="Add/RemoveCoherence POF Plugin">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.projectConfigure?after=additions">
+         <command
+               label="Disable Coherence POF Plugin"
+               commandId="coherence-eclipse-plugin.addRemoveCoherencePOFPlugin"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <count
+                        value="1">
+                  </count>
+                  <iterate>
+                     <adapt
+                           type="org.eclipse.core.resources.IProject">
+                        <test
+                              property="org.eclipse.core.resources.projectNature"
+                              value="coherence-eclipse-plugin.coherencePOFPlugin">
+                        </test>
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+         <command
+               label="Enable Coherence POF Plugin"
+               commandId="coherence-eclipse-plugin.addRemoveCoherencePOFPlugin"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <count
+                        value="1">
+                  </count>
+                  <iterate>
+                     <adapt
+                           type="org.eclipse.core.resources.IProject">
+                        <not>
+                           <test
+                                 property="org.eclipse.core.resources.projectNature"
+                                 value="coherence-eclipse-plugin.coherencePOFPlugin">
+                           </test>
+                        </not>
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         id="portableTypeGeneratorMessage"
+         name="POF Generator"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+
+</plugin>

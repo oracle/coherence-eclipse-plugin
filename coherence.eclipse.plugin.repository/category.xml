@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="coherence-eclipse-plugin-feature">
+      <category name="PTG"/>
+   </feature>
+   <category-def name="PTG" label="Portable Type Generator">
+      <description>
+         Instruments classes annotated with PortableType to make them implement PortableObject and EvolvableObject.
+      </description>
+   </category-def>
+</site>
+

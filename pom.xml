@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2020, 2021 Oracle and/or its affiliates.
+
+  Licensed under the Universal Permissive License v 1.0 as shown at
+  https://oss.oracle.com/licenses/upl.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oracle.coherence.eclipse.plugin</groupId>
+  <artifactId>coherence-eclipse-plugin-parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>Coherence Eclipse Plugin Parent</name>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>coherence.eclipse.plugin</module>
+    <module>coherence.eclipse.plugin.feature</module>
+    <module>coherence.eclipse.plugin.repository</module>
+    <module>coherence.eclipse.plugin.tests</module>
+  </modules>
+
+  <properties>
+    <coherence.version>20.12</coherence.version>
+    <java.version>1.8</java.version>
+    <maven.compiler.version>3.8.0</maven.compiler.version>
+    <mockito.version>3.3.3</mockito.version>
+    <tycho.version>1.7.0</tycho.version>
+    <maven.dependency.plugin.version>3.1.2</maven.dependency.plugin.version>
+  </properties>
+
+  <repositories>
+   <repository>
+     <id>2020-06</id>
+     <layout>p2</layout>
+     <url>http://download.eclipse.org/releases/2020-06</url>
+   </repository>
+  </repositories>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.oracle.coherence.ce</groupId>
+        <artifactId>coherence</artifactId>
+        <version>${coherence.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.version}</version>
+        <configuration>
+        <source>${java.version}</source>
+        <target>{$java.version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-p2-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <executions>
+          <execution>
+            <id>attach-p2-metadata</id>
+            <phase>package</phase>
+            <goals>
+              <goal>p2-metadata</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="coherence-eclipse-plugin-feature"
+      label="Coherence Eclipse Plugin"
+      version="1.0.0.qualifier"
+      provider-name="Oracle">
+
+   <description url="http://www.example.com/description">
+      Allows Instrumentation of classes annotated with PortableType to make them
+implement PortableObject and EvolvableObject.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      Copyright (c) 2000, 2020, Oracle and/or its affiliates.
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      Licensed under the Universal Permissive License v 1.0 as shown at
+https://oss.oracle.com/licenses/upl.
+   </license>
+
+   <url>
+      <discovery label="Oracle Coherence" url="http://coherence.oracle.com/"/>
+   </url>
+
+   <plugin
+         id="coherence-eclipse-plugin"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+</feature>
