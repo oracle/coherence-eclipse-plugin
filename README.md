@@ -1,13 +1,30 @@
+<!--
+
+  Copyright (c) 2021 Oracle and/or its affiliates.
+
+  Licensed under the Universal Permissive License v 1.0 as shown at
+  https://oss.oracle.com/licenses/upl.
+
+-->
+
+<img src=https://oracle.github.io/coherence/assets/images/logo-red.png><img>
+
 # Coherence Eclipse Plugin
+   
+![CI Build](https://github.com/oracle/coherence-eclipse-plugin/workflows/Java%20CI/badge.svg)
+[![License](http://img.shields.io/badge/license-UPL%201.0-blue.svg)](https://oss.oracle.com/licenses/upl/)
 
 # Contents
 
 * [Overview](#overview)
-* [Build the Plugin](#build-the-plugin)
 * [Install the Plugin](#install-the-plugin)
 * [Using the Plugin](#using-the-plugin)
 * [Example Projects](examples/pof-plugin-example-project)
 * [Development](#development)
+  * [Build the Plugin](#build-the-plugin)
+  * [Install the Plugin Manually](#install-the-plugin-manually)
+  * [Open The Plugin Project](#open-the-plugin-project)
+
 
 # Overview
 
@@ -19,38 +36,17 @@ Currently there this plugin supports the following features:
   consistent (and correct) implementations of Evolvable POF serialization methods.
   This development time plugin can be used in conjunction with the `POF Maven Plugin` which instruments classes at project build time.
 
-# Build the Plugin
-
-You must have:
-* JDK1.8
-* Maven 3.6.3+
-* Minimum Eclipse version 2020-03
-
-1. Clone the repository
-
-   ```bash
-   git clone https://gitlab-odx.oracledx.com/coherence/coherence-eclipse-plugin.git
-   ```
-
-1. Build the plugin
-
-   ```bash
-   cd coherence-eclipse-plugin
-   
-   mvn clean install
-   ```
-
-This will generate a zip file called `./coherence.eclipse.plugin.repository/target/coherence-eclipse-plugin-repository-1.0.0-SNAPSHOT.zip`
-
 # Install the Plugin
+
+To install the plugin carry out the following:
 
 1. Help -> Install New Software
 
 1. Click on `Add` button on the right
 
-1. Choose a name such as `Coherence Local`
+1. Choose a name such as `Coherence Eclipse Plugin Updatesite`
 
-1. Click on `Archive` and choose the zip file mentioned above and click `Add`
+1. Enter the location of the Plugin Repository `??????????` and click `Add`.
 
 1. Select the `Coherence Eclipse Plugin` displayed in the list and click `Next`, then `Next`
 
@@ -100,11 +96,55 @@ or is ignored because is does not implement the `PortableType` annotation.
 
 1. Click `Restart Now` to restart Eclipse  
 
-# Example projects
+# Example project
 
 Please see [here](examples/pof-plugin-example-project) for and example project and instructions how to import.
 
+
 # Development
+
+## Build the Plugin
+
+You must have:
+* JDK1.8
+* Maven 3.6.3+
+* Minimum Eclipse version 2020-03
+
+1. Clone the repository
+
+   ```bash
+   git clone https://gitlab-odx.oracledx.com/coherence/coherence-eclipse-plugin.git
+   ```
+
+1. Build the plugin
+
+   ```bash
+   cd coherence-eclipse-plugin
+   
+   mvn clean install
+   ```
+
+This will generate a zip file called `./coherence.eclipse.plugin.repository/target/coherence-eclipse-plugin-repository-1.0.0-SNAPSHOT.zip`
+
+## Install the Plugin manually
+
+1. Help -> Install New Software
+
+1. Click on `Add` button on the right
+
+1. Choose a name such as `Coherence Local`
+
+1. Click on `Archive` and choose the zip file mentioned above and click `Add`
+
+1. Select the `Coherence Eclipse Plugin` displayed in the list and click `Next`, then `Next`
+
+1. Accept the license terms and click `Finish`
+
+1. You may receive a warning that the plugin is unsigned. Choose `Install Anyway`
+
+1. Click `Restart Now` to restart Eclipse  
+
+## Open the Plugin Project
 
 To import the plugin project into your Eclipse IDE, carry out the following:
 
