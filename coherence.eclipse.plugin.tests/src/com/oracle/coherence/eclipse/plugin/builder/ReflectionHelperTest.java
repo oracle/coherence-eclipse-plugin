@@ -60,7 +60,7 @@ public class ReflectionHelperTest
         // add coherence jar to the classloader
         List<URLClassLoader> listProjectLoaders = new ArrayList<>();
         ClassLoader parentClassLoader = ReflectionHelperTest.class.getClassLoader();
-        File fileCoherence = new File("target" + SEP + "runtime-bin" + SEP + "coherence-20.06.jar");
+        File fileCoherence = new File("target" + SEP + "runtime-bin" + SEP + "coherence-20.12.jar");
         File fileClasses = new File("target" + SEP + "classes");
         helper.getProjectLoaders().add(new URLClassLoader(new URL[] {
                                        fileCoherence.toURI().toURL(), fileClasses.toURI().toURL()}, parentClassLoader));

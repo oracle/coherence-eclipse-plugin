@@ -103,6 +103,12 @@
               <version>${tycho-version}</version>
               <configuration>
                 <argLine>-XstartOnFirstThread</argLine>
+                <systemProperties>
+                  <property>
+                    <name>coherence.version</name>
+                    <values>${coherence.version}</values>
+                  </property>
+                </systemProperties>
               </configuration>
             </plugin>
           </plugins>

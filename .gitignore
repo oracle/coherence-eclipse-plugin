@@ -5,3 +5,11 @@ target/
 .idea/
 *.iml
 site.xml
+
+#ignore these specific files
+dependency-reduced-pom.xml
+
+# however allow these files
+!.ignore
+!.github
+!.gitignore

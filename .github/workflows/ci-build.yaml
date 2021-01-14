@@ -1,0 +1,65 @@
+# Copyright (c) 2020 Oracle and/or its affiliates.
+#
+#  Licensed under the Universal Permissive License v 1.0 as shown at
+#  https://oss.oracle.com/licenses/upl.
+
+# ---------------------------------------------------------------------------
+# Coherence Eclipse Plugin GitHub Actions CI build.
+# ---------------------------------------------------------------------------
+
+name: Java CI - Released versions
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up JDK 11 for Build
+      uses: actions/setup-java@v1
+      with:
+        java-version: '11'
+
+    - name: Print Versions
+      run: mvn -version && ant -version
+
+    - name: Cache Maven packages
+      uses: actions/cache@v1
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+
+    - name: Build
+      shell: bash
+      run: |
+        mvn --file pom.xml --batch-mode -e -DskipTests clean install
+
+    - name: Verify
+      shell: bash
+      run: |
+        echo "Running verify ${{ matrix.version }}"
+        mvn --file pom.xml --batch-mode -e verify
+
+    - name: Build Artifacts test logs
+      uses: actions/upload-artifact@v2
+      if: failure()
+      with:
+        name: test-output
+        path: coherence.eclipse.plugin.tests/**/target/surefire-reports/**/*
+
+    - name: Coherence Eclipse Plugin ZIP
+      uses: actions/upload-artifact@v2
+      with:
+        name: coherence-eclipse-plugin
+        path: ./coherence.eclipse.plugin.repository/target/coherence-eclipse-plugin-repository-*.zip
