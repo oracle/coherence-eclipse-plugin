@@ -59,7 +59,7 @@ jobs:
         cat coherence.eclipse.plugin.tests/build.properties.orig | sed 's/20\.12/'$COH_VERSION'/' > coherence.eclipse.plugin.tests/build.properties
         echo "Using the following build.properties"
         echo '==================='
-        cat oherence.eclipse.plugin.tests/build.properties
+        cat coherence.eclipse.plugin.tests/build.properties
         echo '==================='
         mvn --file pom.xml --batch-mode -e -Dtycho.testArgLine="-Dcoherence.version=$COH_VERSION" -Dcoherence.version=$COH_VERSION verify
 
