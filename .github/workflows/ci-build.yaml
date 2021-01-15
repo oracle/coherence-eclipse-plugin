@@ -20,6 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      matrix:
+        version:
+          - 20.12
 
     steps:
     - name: Checkout
@@ -40,16 +43,25 @@ jobs:
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
 
-    - name: Build
+    - name: Build Using Default Version (20.12)
       shell: bash
       run: |
         mvn --file pom.xml --batch-mode -e -DskipTests clean install
+        cp coherence.eclipse.plugin.tests/build.properties coherence.eclipse.plugin.tests/build.properties.orig
 
     - name: Verify
       shell: bash
+      env:
+        COH_VERSION: ${{ matrix.version }}
       run: |
-        echo "Running verify ${{ matrix.version }}"
-        mvn --file pom.xml --batch-mode -e verify
+        echo "Running verify against $COH_VERSION"
+        echo "Update build.properties to $COH_VERSION"
+        cat coherence.eclipse.plugin.tests/build.properties.orig | sed 's/20\.12/'$COH_VERSION'/' > coherence.eclipse.plugin.tests/build.properties
+        echo "Using the following build.properties"
+        echo '==================='
+        cat oherence.eclipse.plugin.tests/build.properties
+        echo '==================='
+        mvn --file pom.xml --batch-mode -e -Dtycho.testArgLine="-Dcoherence.version=$COH_VERSION" -Dcoherence.version=$COH_VERSION verify
 
     - name: Build Artifacts test logs
       uses: actions/upload-artifact@v2

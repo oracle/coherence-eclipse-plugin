@@ -45,6 +45,8 @@ public class ReflectionHelperTest
     public void testInstrumentation()
             throws MalformedURLException
         {
+        String sCoherenceVersion = System.getProperty("coherence.version");
+        System.err.println("Testing against Coherence version " + sCoherenceVersion);
         CoherencePluginBuilder builder = new CoherencePluginBuilder();
         PluginContext context = new PluginContext(builder);
         ReflectionHelper helper = new ReflectionHelper(context);
@@ -60,7 +62,7 @@ public class ReflectionHelperTest
         // add coherence jar to the classloader
         List<URLClassLoader> listProjectLoaders = new ArrayList<>();
         ClassLoader parentClassLoader = ReflectionHelperTest.class.getClassLoader();
-        File fileCoherence = new File("target" + SEP + "runtime-bin" + SEP + "coherence-20.12.jar");
+        File fileCoherence = new File("target" + SEP + "runtime-bin" + SEP + "coherence-" + sCoherenceVersion + ".jar");
         File fileClasses = new File("target" + SEP + "classes");
         helper.getProjectLoaders().add(new URLClassLoader(new URL[] {
                                        fileCoherence.toURI().toURL(), fileClasses.toURI().toURL()}, parentClassLoader));
