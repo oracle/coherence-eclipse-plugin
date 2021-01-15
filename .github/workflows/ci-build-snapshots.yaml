@@ -7,13 +7,16 @@
 # Coherence Eclipse Plugin GitHub Actions CI build.
 # ---------------------------------------------------------------------------
 
-name: Java CI
+name: Java CI Snapshots
 
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  schedule:
+    # Every day at midnight
+    - cron: '0 0 * * *'
 
 jobs:
   build:
@@ -22,7 +25,6 @@ jobs:
       fail-fast: false
       matrix:
         branch:
-          - v14.1.1.0
           - main
 
     steps:
