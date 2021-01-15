@@ -31,16 +31,16 @@
 The Coherence Eclipse Plugin provides various features to help developer productivity
 when working with Coherence.
 
-Currently there this plugin supports the following features:
+Currently this plugin supports the following features:
 * `Coherence POF Plugin` - Provides a development time instrumentation of classes with the PortableType annotation to generate
   consistent (and correct) implementations of Evolvable POF serialization methods.
-  This development time plugin can be used in conjunction with the `POF Maven Plugin` which instruments classes at project build time.
+  This development time plugin can be used in conjunction with the [POF Maven Plugin](https://github.com/oracle/coherence/tree/master/prj/plugins/maven/pof-maven-plugin) which instruments classes at project build time.
 
 # Install the Plugin
 
 To install the plugin carry out the following:
 
-1. Help -> Install New Software
+1. Choose `Help` -> `Install New Software`
 
 1. Click on `Add` button on the right
 
@@ -52,13 +52,11 @@ To install the plugin carry out the following:
 
 1. Accept the license terms and click `Finish`
 
-1. You may receive a warning that the plugin is unsigned. Choose `Install Anyway`
-
 1. Click `Restart Now` to restart Eclipse  
 
 # Using the plugin
 
-> Note: You can use the sample project [here](examples/pof-plugin-example-project) to test the plugin.
+> Note: You can use the example project [here](examples/pof-plugin-example-project) to test the plugin.
 
 ## Enable the Plugin
 
@@ -86,7 +84,7 @@ or is ignored because is does not implement the `PortableType` annotation.
    
 # Uninstall the Plugin
 
-1. Help -> Install New Software
+1. Choose `Help` -> `Install New Software`
 
 1. Click on `What is already installed` link
 
@@ -95,11 +93,6 @@ or is ignored because is does not implement the `PortableType` annotation.
 1. Click `Un-install` then `Finish`
 
 1. Click `Restart Now` to restart Eclipse  
-
-# Example project
-
-Please see [here](examples/pof-plugin-example-project) for and example project and instructions how to import.
-
 
 # Development
 
@@ -113,7 +106,7 @@ You must have:
 1. Clone the repository
 
    ```bash
-   git clone https://gitlab-odx.oracledx.com/coherence/coherence-eclipse-plugin.git
+   git clone https://github.com/oracle/coherence-eclipse-plugin.git
    ```
 
 1. Build the plugin
@@ -128,7 +121,7 @@ This will generate a zip file called `./coherence.eclipse.plugin.repository/targ
 
 ## Install the Plugin manually
 
-1. Help -> Install New Software
+1. Choose `Help` -> `Install New Software`
 
 1. Click on `Add` button on the right
 
@@ -151,12 +144,12 @@ To import the plugin project into your Eclipse IDE, carry out the following:
 1. Clone the repository using:
 
    ```bash
-   git clone https://gitlab-odx.oracledx.com/coherence/coherence-eclipse-plugin.git
+   git clone coherence-eclipse-plugin
    ```
 
 1. Open Eclipse
 
-1. Choose `File->Open Projects from Filesystem`
+1. Choose `File` -> `Open Projects from Filesystem`
 
 1. Choose `Directory` and select the `coherence-eclipse-plugin` project you cloned, then click `Done`
 
