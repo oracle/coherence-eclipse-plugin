@@ -40,19 +40,19 @@ Currently this plugin supports the following features:
 
 To install the plugin carry out the following:
 
-1. Choose `Help` -> `Install New Software`
+1. Choose <kbd>Help</kbd> -> <kbd>Install New Software</kbd>
 
-1. Click on `Add` button on the right
+1. Click on <kbd>Add</kbd> button on the right
 
 1. Choose a name such as `Coherence Eclipse Plugin Update Site`
 
 1. Enter the location of the Plugin Repository `https://oracle.github.io/coherence-eclipse-plugin/eclipse/1.0.0` and click `Add`.
 
-1. Select the `Coherence Eclipse Plugin` displayed in the list and click `Next`, then `Next`
+1. Select the `Coherence Eclipse Plugin` displayed in the list and click <kbd>Next</kbd>, then <kbd>Next</kbd>
 
-1. Accept the license terms and click `Finish`
+1. Accept the license terms and click <kbd>Finish</kbd>
 
-1. Click `Restart Now` to restart Eclipse  
+1. Click <kbd>Restart Now</kbd> to restart Eclipse
 
 # Using the plugin
 
@@ -62,7 +62,7 @@ To install the plugin carry out the following:
 
 1. Right-click on your open project
 
-2. Select `Configure` then `Enable Coherence POF Plugin`
+2. Select <kbd>Configure</kbd> then <kbd>Enable Coherence POF Plugin</kbd>
 
 ![Messages](assets/enable.png)
 
@@ -70,7 +70,7 @@ To install the plugin carry out the following:
 
 1. Right-click on your open project
 
-2. Select `Configure` then `Disable Coherence POF Plugin`
+2. Select <kbd>Configure</kbd> then <kbd>Disable Coherence POF Plugin</kbd>
 
 ## Verifying
 
@@ -84,15 +84,15 @@ or is ignored because is does not implement the `PortableType` annotation.
    
 # Uninstall the Plugin
 
-1. Choose `Help` -> `Install New Software`
+1. Choose <kbd>Help</kbd> -> <kbd>Install New Software</kbd>
 
-1. Click on `What is already installed` link
+1. Click on <kbd>What is already installed</kbd> link
 
-1. Search for `Coherence` and select `Coherence Eclipse Plugin`
+1. Search for <kbd>Coherence</kbd> and select <kbd>Coherence Eclipse Plugin</kbd>
 
-1. Click `Un-install` then `Finish`
+1. Click <kbd>Un-install</kbd> then <kbd>Finish</kbd>
 
-1. Click `Restart Now` to restart Eclipse  
+1. Click <kbd>Restart Now</kbd> to restart Eclipse  
 
 # Development
 
@@ -121,21 +121,21 @@ This will generate a zip file called `./coherence.eclipse.plugin.repository/targ
 
 ## Install the Plugin manually
 
-1. Choose `Help` -> `Install New Software`
+1. Choose <kbd>Help</kbd> -> <kbd>Install New Software</kbd>
 
-1. Click on `Add` button on the right
+1. Click on <kbd>Add</kbd> button on the right
 
-1. Choose a name such as `Coherence Local`
+1. Choose a name such as <kbd>Coherence Local</kbd>
 
-1. Click on `Archive` and choose the zip file mentioned above and click `Add`
+1. Click on <kbd>Archive<kbd> and choose the zip file mentioned above and click <kbd>Add</kbd>
 
-1. Select the `Coherence Eclipse Plugin` displayed in the list and click `Next`, then `Next`
+1. Select the <kbd>Coherence Eclipse Plugin</kbd> displayed in the list and click <kbd>Next</kbd>, then <kbd>Next</kbd>
 
-1. Accept the license terms and click `Finish`
+1. Accept the license terms and click <kbd>Finish</kbd>
 
-1. You may receive a warning that the plugin is unsigned. Choose `Install Anyway`
+1. You may receive a warning that the plugin is unsigned. Choose <kbd>Install Anyway</kbd>
 
-1. Click `Restart Now` to restart Eclipse  
+1. Click <kbd>Restart Now</kbd> to restart Eclipse  
 
 ## Open the Plugin Project
 
@@ -144,14 +144,14 @@ To import the plugin project into your Eclipse IDE, carry out the following:
 1. Clone the repository using:
 
    ```bash
-   git clone coherence-eclipse-plugin
+   git clone https://github.com/oracle/coherence-eclipse-plugin.git
    ```
 
 1. Open Eclipse
 
-1. Choose `File` -> `Open Projects from Filesystem`
+1. Choose <kbd>File</kbd> -> <kbd>Open Projects from Filesystem</kbd>
 
-1. Choose `Directory` and select the `coherence-eclipse-plugin` project you cloned, then click `Done`
+1. Choose <kbd>Directory</kbd> and select the <kbd>coherence-eclipse-plugin</kbd> project you cloned, then click `Done`
 
 1. Ensure you only select the `coherence-ecplise-plugin/coherence.eclipse.plugin` as shown below:
 
