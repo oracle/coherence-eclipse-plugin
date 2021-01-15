@@ -46,7 +46,7 @@ To install the plugin carry out the following:
 
 1. Choose a name such as `Coherence Eclipse Plugin Update Site`
 
-1. Enter the location of the Plugin Repository `https://oracle.github.io/coherence-eclipse-plugin/eclipse/1.0.0` and click `Add`.
+1. Enter the location of the Plugin Repository `https://oracle.github.io/coherence-eclipse-plugin/eclipse/1.0.0` and click <kbd>Add</kbd>.
 
 1. Select the `Coherence Eclipse Plugin` displayed in the list and click <kbd>Next</kbd>, then <kbd>Next</kbd>
 
@@ -127,7 +127,7 @@ This will generate a zip file called `./coherence.eclipse.plugin.repository/targ
 
 1. Choose a name such as <kbd>Coherence Local</kbd>
 
-1. Click on <kbd>Archive<kbd> and choose the zip file mentioned above and click <kbd>Add</kbd>
+1. Click on <kbd>Archive</kbd> and choose the zip file mentioned above and click <kbd>Add</kbd>
 
 1. Select the <kbd>Coherence Eclipse Plugin</kbd> displayed in the list and click <kbd>Next</kbd>, then <kbd>Next</kbd>
 
