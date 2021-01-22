@@ -2,7 +2,7 @@
 <feature
       id="coherence-eclipse-plugin-feature"
       label="Coherence Eclipse Plugin"
-      version="1.0.0.qualifier"
+      version="1.0.1.qualifier"
       provider-name="Oracle">
 
    <description url="http://www.example.com/description">
@@ -27,7 +27,7 @@ https://oss.oracle.com/licenses/upl.
          id="coherence-eclipse-plugin"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
 </feature>

@@ -12,7 +12,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.coherence.eclipse.plugin</groupId>
   <artifactId>coherence-eclipse-plugin-parent</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <name>Coherence Eclipse Plugin Parent</name>
   <packaging>pom</packaging>
 
