@@ -7,6 +7,7 @@
 
 -->
 
+
 <img src=https://oracle.github.io/coherence/assets/images/logo-red.png><img>
 
 # Coherence Eclipse Plugin
