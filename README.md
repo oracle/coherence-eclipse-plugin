@@ -28,8 +28,7 @@
 
 # Overview
 
-The Coherence Eclipse Plugin provides various features to help developer productivity
-when working with Coherence.
+The Coherence Eclipse Plugin provides various features to help developer productivity when working with Coherence.
 
 Currently this plugin supports the following features:
 * `Coherence POF Plugin` - Provides a development time instrumentation of classes with the PortableType annotation to generate
