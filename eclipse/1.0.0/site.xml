@@ -6,5 +6,5 @@
 -->
 
 <site>
-  <feature url="features/coherence-eclipse-plugin-feature_1.0.0.202101140522.jar" id="org.eclipse.feature" version="1.0.0.202101140522">
+  <feature url="features/coherence-eclipse-plugin-feature_1.0.0.202101140522.jar" id="coherence-eclipse-plugin-feature" version="1.0.0.202101140522">
 </site>
