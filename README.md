@@ -54,6 +54,9 @@ To install the plugin carry out the following:
 
 1. Click <kbd>Restart Now</kbd> to restart Eclipse
 
+[![Drag to your running Eclipse* workspace. *Requires Eclipse Marketplace Client](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.svg)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=5351771 "Drag to your running Eclipse* workspace. *Requires Eclipse Marketplace Client")
+
+
 # Using the plugin
 
 > Note: You can use the example project [here](examples/pof-plugin-example-project) to test the plugin.
