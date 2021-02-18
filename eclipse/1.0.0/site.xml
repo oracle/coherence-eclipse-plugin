@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2020, 2021 Oracle and/or its affiliates.
+  Licensed under the Universal Permissive License v 1.0 as shown at
+  https://oss.oracle.com/licenses/upl.
+-->
+<site>
+   <description name="Coherence Eclipse Plugin" url="https://oracle.github.io/coherence-eclipse-plugin/eclipse/1.0.0">
+      Coherence Eclipse Plugin
+   </description>
+   <feature url="https://oracle.github.io/coherence-eclipse-plugin/eclipse/1.0.0/features/coherence-eclipse-plugin-feature_1.0.0.202101140522.jar" id="coherence-eclipse-plugin-feature.feature" version="1.0.0.202101140522">
+      <category name="PTG"/>
+   </feature>
+   <archive path="plugins/coherence-eclipse-plugin_1.0.0.202101140522.jar" url="https://oracle.github.io/coherence-eclipse-plugin/eclipse/1.0.0/plugins/coherence-eclipse-plugin_1.0.0.202101140522.jar"/>
+   <category-def name="PTG" label="Portable Type Generator"/>
+</site>
