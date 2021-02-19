@@ -29,14 +29,11 @@
 
 # Overview
 
-> For full documentation on the Coherence POF code generator and using PortableType annotations
-> see the official [Portable Types documentation](https://coherence.community/20.12/docs/#/docs/core/04_portable_types)
-
 The Coherence Eclipse Plugin provides various features to help developer productivity when working with Coherence.
-For full documentation on the Coherence POF code generator and using PortableType annotations see the official Portable Types documentation
+
 Currently this plugin supports the following features:
-* `Coherence POF Plugin` - Provides a development time instrumentation of classes with the PortableType annotation to generate
-  consistent (and correct) implementations of Evolvable POF serialization methods.
+* `Coherence POF Plugin` - Provides a development time instrumentation of classes with the `PortableType` annotation to generate
+  consistent (and correct) implementations of `Evolvable` POF serialization methods.
   This development time plugin can be used in conjunction with the [POF Maven Plugin](https://github.com/oracle/coherence/tree/master/prj/plugins/maven/pof-maven-plugin) which instruments classes at project build time.
   See the official [Portable Type](https://coherence.community/20.12/docs/#/docs/core/04_portable_types) documentation for more details on writing portable types in Coherence. 
 
