@@ -86,7 +86,7 @@ jobs:
         COH_BRANCH: ${{ matrix.branch }} 
       run: |
         CLONE_DIR=coherence-$COH_BRANCH
-        COH_VERSION=`cat /tmp/${CLONE_DIR}/prj/pom.xml | grep '<revision>' | sed -e 's,^.*<revision>,,' -e 's,</revision>.*$,,'`
+        COH_VERSION=`cat /tmp/${CLONE_DIR}/prj/coherence-bom/pom.xml | grep '<revision>' | sed -e 's,^.*<revision>,,' -e 's,</revision>.*$,,'`
         
         echo "Running verify against $COH_VERSION"
         echo "Update build.properties to $COH_VERSION"
