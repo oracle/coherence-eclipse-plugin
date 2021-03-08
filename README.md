@@ -11,7 +11,7 @@
 <img src=https://oracle.github.io/coherence/assets/images/logo-red.png><img>
 
 # Coherence Eclipse Plugin
-   
+
 ![CI Build](https://github.com/oracle/coherence-eclipse-plugin/workflows/Java%20CI/badge.svg)
 [![License](http://img.shields.io/badge/license-UPL%201.0-blue.svg)](https://oss.oracle.com/licenses/upl/)
 
@@ -35,9 +35,23 @@ Currently this plugin supports the following features:
 * `Coherence POF Plugin` - Provides a development time instrumentation of classes with the `PortableType` annotation to generate
   consistent (and correct) implementations of `Evolvable` POF serialization methods.
   This development time plugin can be used in conjunction with the [POF Maven Plugin](https://github.com/oracle/coherence/tree/master/prj/plugins/maven/pof-maven-plugin) which instruments classes at project build time.
-  See the official [Portable Type](https://coherence.community/20.12/docs/#/docs/core/04_portable_types) documentation for more details on writing portable types in Coherence. 
+  See the official [Portable Type](https://coherence.community/20.12/docs/#/docs/core/04_portable_types) documentation for more details on writing portable types in Coherence.
 
 # Install the Plugin
+
+## Using Eclipse Marketplace Client
+
+If you are using Eclipse Marketplace Client, then you can use either of the following methods:
+
+1. Drag the following to your running Eclipse workspace
+[![Drag to your running Eclipse* workspace. *Requires Eclipse Marketplace Client](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.svg)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=5351771 "Drag to your running Eclipse* workspace. *Requires Eclipse Marketplace Client")
+
+2. Open Eclipse Marketplace Client and search for <kbd>Coherence</kbd>, then choose <kbd>Install</kbd> on the <kbd>Coherence Eclipse Plugin 1.0.0</kbd>. Accept the terms and conditions and click <kbd>Finish</kbd>.
+
+   ![Eclipse Marketplace Client](assets/mpc.png)
+
+
+## Install Manually
 
 To install the plugin carry out the following:
 
@@ -82,7 +96,7 @@ A message indicating the class was not instrumented can indicate that it has alr
 or is ignored because is does not implement the `PortableType` annotation.
 
 ![Messages](assets/messages.png)
-   
+
 # Uninstall the Plugin
 
 1. Choose <kbd>Help</kbd> -> <kbd>Install New Software</kbd>
@@ -114,7 +128,7 @@ You must have:
 
    ```bash
    cd coherence-eclipse-plugin
-   
+
    mvn clean install
    ```
 
