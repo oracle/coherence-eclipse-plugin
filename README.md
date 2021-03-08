@@ -44,7 +44,8 @@ Currently this plugin supports the following features:
 If you are using Eclipse Marketplace Client, then you can use either of the following methods:
 
 1. Drag the following to your running Eclipse workspace
-[![Drag to your running Eclipse* workspace. *Requires Eclipse Marketplace Client](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.svg)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=5351771 "Drag to your running Eclipse* workspace. *Requires Eclipse Marketplace Client")
+
+   [![Drag to your running Eclipse* workspace. *Requires Eclipse Marketplace Client](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.svg)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=5351771 "Drag to your running Eclipse* workspace. *Requires Eclipse Marketplace Client")
 
 2. Open Eclipse Marketplace Client and search for <kbd>Coherence</kbd>, then choose <kbd>Install</kbd> on the <kbd>Coherence Eclipse Plugin 1.0.0</kbd>. Accept the terms and conditions and click <kbd>Finish</kbd>.
 
