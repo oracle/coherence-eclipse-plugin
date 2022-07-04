@@ -39,7 +39,7 @@ jobs:
     - name: Print Versions
       run: mvn -version && ant -version
 
-    - name: Build Using Default Version (20.12)
+    - name: Build Using Default Version (22.06)
       shell: bash
       run: |
         mvn --file pom.xml --batch-mode -e -DskipTests clean install
