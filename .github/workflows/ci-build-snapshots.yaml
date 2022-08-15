@@ -31,7 +31,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Set up JDK 8 for Build
+    - name: Set up JDK 11 for Build
       uses: actions/setup-java@v1
       with:
         java-version: 11
@@ -45,10 +45,10 @@ jobs:
         mvn --file pom.xml --batch-mode -e -DskipTests clean install
         cp coherence.eclipse.plugin.tests/build.properties coherence.eclipse.plugin.tests/build.properties.orig
 
-    - name: Set up JDK 11 for Coherence Build
+    - name: Set up JDK 17 for Coherence Build
       uses: actions/setup-java@v1
       with:
-        java-version: '11'
+        java-version: '17'
 
     - name: Build Coherence Snapshot
       shell: bash
@@ -66,8 +66,8 @@ jobs:
            mvn --file prj/pom.xml --batch-mode -e -DskipTests clean install
         else
            # main requires updated 2 step build for coherence.jar and everything else
-           mvn --file prj/pom.xml --batch-mode -e -DskipTests clean install
-           mvn --file prj/pom.xml --batch-mode -e -P-coherence,modules -nsu -DskipTests clean install
+           cd prj
+           make all
         fi
         cd $DIR
 
