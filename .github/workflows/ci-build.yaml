@@ -1,4 +1,4 @@
-# Copyright (c) 2020 Oracle and/or its affiliates.
+# Copyright (c) 2020, 2022 Oracle and/or its affiliates.
 #
 #  Licensed under the Universal Permissive License v 1.0 as shown at
 #  https://oss.oracle.com/licenses/upl.
@@ -22,11 +22,10 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          - 22.06
-          - 21.12.4
+          - 22.09
+          - 22.06.2
           - 21.06.2
-          - 20.12.1
-          - 20.06.1
+          - 21.12.4
 
     steps:
     - name: Checkout
@@ -35,7 +34,7 @@ jobs:
     - name: Set up JDK 8 for Build
       uses: actions/setup-java@v1
       with:
-        java-version: 11
+        java-version: 17
 
     - name: Print Versions
       run: mvn -version && ant -version
@@ -47,7 +46,7 @@ jobs:
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
 
-    - name: Build Using Default Version (20.12)
+    - name: Build Using Default Version (22.09)
       shell: bash
       run: |
         mvn --file pom.xml --batch-mode -e -DskipTests clean install
@@ -60,7 +59,7 @@ jobs:
       run: |
         echo "Running verify against $COH_VERSION"
         echo "Update build.properties to $COH_VERSION"
-        cat coherence.eclipse.plugin.tests/build.properties.orig | sed 's/20\.12/'$COH_VERSION'/' > coherence.eclipse.plugin.tests/build.properties
+        cat coherence.eclipse.plugin.tests/build.properties.orig | sed 's/22\.09/'$COH_VERSION'/' > coherence.eclipse.plugin.tests/build.properties
         echo "Using the following build.properties"
         echo '==================='
         cat coherence.eclipse.plugin.tests/build.properties
