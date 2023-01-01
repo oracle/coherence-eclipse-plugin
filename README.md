@@ -169,7 +169,7 @@ To import the plugin project into your Eclipse IDE, carry out the following:
 
 1. Choose <kbd>Directory</kbd> and select the <kbd>coherence-eclipse-plugin</kbd> project you cloned, then click `Done`
 
-1. Ensure you only select the `coherence-ecplise-plugin/coherence.eclipse.plugin` as shown below:
+1. Ensure you only select the `coherence-eclipse-plugin/coherence.eclipse.plugin` as shown below:
 
    ![Import](assets/import.png)
 
