@@ -11,7 +11,8 @@ name: Java CI
 
 on:
   push:
-    branches: [ main ]
+    branches:
+    - '*'
 
 jobs:
   build:
@@ -21,7 +22,7 @@ jobs:
       matrix:
         version:
           - 22.09
-          - 22.06.2
+          - 22.06.3
           - 21.06.2
           - 21.12.4
 
