@@ -23,8 +23,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        branch:
-          - main
+        coherenceVersion:
+          - 23.03-SNAPSHOT
+          - 22.06.4-SNAPSHOT
 
     steps:
     - name: Checkout
@@ -44,31 +45,10 @@ jobs:
         mvn --file pom.xml --batch-mode -e -DskipTests clean install
         cp coherence.eclipse.plugin.tests/build.properties coherence.eclipse.plugin.tests/build.properties.orig
 
-    - name: Set up JDK 17 for Coherence Build
+    - name: Set up JDK 17
       uses: actions/setup-java@v1
       with:
         java-version: '17'
-
-    - name: Build Coherence Snapshot
-      shell: bash
-      env:
-        COH_BRANCH: ${{ matrix.branch }}
-      run: |
-        # Checkout the git repo for coherence snapshot and build
-        DIR=`pwd`
-        CLONE_DIR=coherence-$COH_BRANCH
-        cd /tmp
-        git clone https://github.com/oracle/coherence.git $CLONE_DIR
-        cd $CLONE_DIR
-        if [ $COH_BRANCH != "main" ] ; then
-           git checkout $COH_BRANCH
-           mvn --file prj/pom.xml --batch-mode -e -DskipTests clean install
-        else
-           # main requires updated 2 step build for coherence.jar and everything else
-           cd prj
-           make all
-        fi
-        cd $DIR
 
     - name: Cache Maven packages
       uses: actions/cache@v1
@@ -80,24 +60,10 @@ jobs:
     - name: Verify
       shell: bash
       env:
-        COH_BRANCH: ${{ matrix.branch }} 
+        COH_VERSION: ${{ matrix.coherenceVersion }}
       run: |
-        CLONE_DIR=coherence-$COH_BRANCH
-        COH_VERSION=`cat /tmp/${CLONE_DIR}/prj/coherence-bom/pom.xml | grep '<revision>' | sed -e 's,^.*<revision>,,' -e 's,</revision>.*$,,'`
-        
-        echo "Running verify against $COH_VERSION"
-        echo "Update build.properties to $COH_VERSION"
-        cat coherence.eclipse.plugin.tests/build.properties.orig | sed 's/22\.09/'$COH_VERSION'/' > coherence.eclipse.plugin.tests/build.properties
-        echo "Using the following build.properties"
-        echo '==================='
-        cat coherence.eclipse.plugin.tests/build.properties
-        echo '==================='
         mvn --file pom.xml --batch-mode -e -Dtycho.testArgLine="-Dcoherence.version=$COH_VERSION" -Dcoherence.version=$COH_VERSION verify
          
-        echo "Removing Coherence cloned directory"
-        CLONE_DIR=coherence-$COH_BRANCH
-        rm -rf /tmp/${CLONE_DIR}
-
     - name: Build Artifacts test logs
       uses: actions/upload-artifact@v2
       if: failure()

@@ -22,9 +22,10 @@ jobs:
       matrix:
         version:
           - 22.09
+          - 23.03-SNAPSHOT
+          - 22.06.4-SNAPSHOT
           - 22.06.3
           - 21.06.2
-          - 21.12.4
 
     steps:
     - name: Checkout
