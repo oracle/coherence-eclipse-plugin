@@ -21,6 +21,7 @@ jobs:
       fail-fast: false
       matrix:
         version:
+          - 23.03
           - 22.09
           - 23.03-SNAPSHOT
           - 22.06.4-SNAPSHOT
