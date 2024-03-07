@@ -18,7 +18,7 @@
 # Contents
 
 * [Overview](#overview)
-* [Install the Plugin](#install-the-plugin)
+* [Installation](#installation)
 * [Using the Plugin](#using-the-plugin)
 * [Example Projects](examples/pof-plugin-example-project)
 * [Development](#development)
@@ -37,7 +37,7 @@ Currently this plugin supports the following features:
   This development time plugin can be used in conjunction with the [POF Maven Plugin](https://github.com/oracle/coherence/tree/master/prj/plugins/maven/pof-maven-plugin) which instruments classes at project build time.
   See the official [Portable Type](https://coherence.community/21.06/docs/#/docs/core/04_portable_types) documentation for more details on writing portable types in Coherence.
 
-# Install the Plugin
+# Installation
 
 ## Using Eclipse Marketplace Client
 
