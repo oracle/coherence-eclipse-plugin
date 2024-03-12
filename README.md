@@ -15,7 +15,7 @@
 ![CI Build](https://github.com/oracle/coherence-eclipse-plugin/workflows/Java%20CI/badge.svg)
 [![License](http://img.shields.io/badge/license-UPL%201.0-blue.svg)](https://oss.oracle.com/licenses/upl/)
 
-# Contents
+## Contents
 
 * [Overview](#overview)
 * [Installation](#installation)
@@ -27,7 +27,7 @@
   * [Open The Plugin Project](#open-the-plugin-project)
 
 
-# Overview
+## Overview
 
 The Coherence Eclipse Plugin provides various features to help developer productivity when working with Coherence.
 
@@ -37,9 +37,9 @@ Currently this plugin supports the following features:
   This development time plugin can be used in conjunction with the [POF Maven Plugin](https://github.com/oracle/coherence/tree/master/prj/plugins/maven/pof-maven-plugin) which instruments classes at project build time.
   See the official [Portable Type](https://coherence.community/21.06/docs/#/docs/core/04_portable_types) documentation for more details on writing portable types in Coherence.
 
-# Installation
+## Installation
 
-## Using Eclipse Marketplace Client
+### Using Eclipse Marketplace Client
 
 If you are using Eclipse Marketplace Client, then you can use either of the following methods:
 
@@ -52,7 +52,7 @@ If you are using Eclipse Marketplace Client, then you can use either of the foll
    ![Eclipse Marketplace Client](assets/mpc.png)
 
 
-## Install Manually
+### Install Manually
 
 To install the plugin carry out the following:
 
@@ -70,11 +70,11 @@ To install the plugin carry out the following:
 
 1. Click <kbd>Restart Now</kbd> to restart Eclipse
 
-# Using the plugin
+## Using the plugin
 
 > Note: You can use the example project [here](examples/pof-plugin-example-project) to test the plugin.
 
-## Enable the Plugin
+### Enable the Plugin
 
 1. Right-click on your open project
 
@@ -82,13 +82,13 @@ To install the plugin carry out the following:
 
 ![Messages](assets/enable.png)
 
-## Disable the Plugin
+### Disable the Plugin
 
 1. Right-click on your open project
 
 2. Select <kbd>Configure</kbd> then <kbd>Disable Coherence POF Plugin</kbd>
 
-## Verifying
+### Verifying
 
 When you build your project, for any Java classes that use the `@PortableType` annotation
 you will see an Info message in the `Problems` tab saying the class was instrumented.
@@ -98,7 +98,7 @@ or is ignored because is does not implement the `PortableType` annotation.
 
 ![Messages](assets/messages.png)
 
-# Uninstall the Plugin
+## Uninstall the Plugin
 
 1. Choose <kbd>Help</kbd> -> <kbd>Install New Software</kbd>
 
@@ -110,9 +110,9 @@ or is ignored because is does not implement the `PortableType` annotation.
 
 1. Click <kbd>Restart Now</kbd> to restart Eclipse  
 
-# Development
+## Development
 
-## Build the Plugin
+### Build the Plugin
 
 You must have:
 * JDK1.8
@@ -135,7 +135,7 @@ You must have:
 
 This will generate a zip file called `./coherence.eclipse.plugin.repository/target/coherence-eclipse-plugin-repository-1.0.0-SNAPSHOT.zip`
 
-## Install the Plugin manually
+### Install the Plugin manually
 
 1. Choose <kbd>Help</kbd> -> <kbd>Install New Software</kbd>
 
@@ -153,7 +153,7 @@ This will generate a zip file called `./coherence.eclipse.plugin.repository/targ
 
 1. Click <kbd>Restart Now</kbd> to restart Eclipse  
 
-## Open the Plugin Project
+### Open the Plugin Project
 
 To import the plugin project into your Eclipse IDE, carry out the following:
 
