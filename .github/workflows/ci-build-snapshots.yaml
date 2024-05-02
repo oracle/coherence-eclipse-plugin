@@ -24,17 +24,17 @@ jobs:
       fail-fast: false
       matrix:
         coherenceVersion:
-          - 23.09-SNAPSHOT
-          - 22.06.8-SNAPSHOT
+          - 24.03.1-SNAPSHOT
+          - 22.06.9-SNAPSHOT
 
     steps:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Set up JDK 11 for Build
+    - name: Set up JDK 17 for Build
       uses: actions/setup-java@v4
       with:
-        java-version: '11'
+        java-version: '17'
         distribution: 'zulu'
 
     - name: Print Versions
