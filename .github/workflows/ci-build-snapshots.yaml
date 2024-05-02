@@ -24,17 +24,18 @@ jobs:
       fail-fast: false
       matrix:
         coherenceVersion:
-          - 23.09-SNAPSHOT
-          - 22.06.8-SNAPSHOT
+          - 24.03.1-SNAPSHOT
+          - 22.06.9-SNAPSHOT
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
-    - name: Set up JDK 11 for Build
-      uses: actions/setup-java@v1
+    - name: Set up JDK 17 for Build
+      uses: actions/setup-java@v4
       with:
-        java-version: 11
+        java-version: '17'
+        distribution: 'zulu'
 
     - name: Print Versions
       run: mvn -version && ant -version
@@ -46,12 +47,13 @@ jobs:
         cp coherence.eclipse.plugin.tests/build.properties coherence.eclipse.plugin.tests/build.properties.orig
 
     - name: Set up JDK 17
-      uses: actions/setup-java@v1
+      uses: actions/setup-java@v4
       with:
         java-version: '17'
+        distribution: 'zulu'
 
     - name: Cache Maven packages
-      uses: actions/cache@v1
+      uses: actions/cache@v4
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
@@ -65,14 +67,14 @@ jobs:
         mvn --file pom.xml --batch-mode -e -Dtycho.testArgLine="-Dcoherence.version=$COH_VERSION" -Dcoherence.version=$COH_VERSION verify
          
     - name: Build Artifacts test logs
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       if: failure()
       with:
-        name: test-output
+        name: test-output-${{ matrix.coherenceVersion }}
         path: coherence.eclipse.plugin.tests/**/target/surefire-reports/**/*
 
     - name: Coherence Eclipse Plugin ZIP
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
-        name: coherence-eclipse-plugin
+        name: coherence-eclipse-plugin-${{ matrix.coherenceVersion }}
         path: ./coherence.eclipse.plugin.repository/target/coherence-eclipse-plugin-repository-*.zip
