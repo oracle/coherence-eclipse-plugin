@@ -21,12 +21,10 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          - 24.09.2
-          - 24.09.1-SNAPSHOT
-          - 22.06.11-SNAPSHOT
-          - 22.06.10
+          - 24.09.3
+          - 24.09.4-SNAPSHOT
+          - 22.06.12-SNAPSHOT
           - 22.06.11
-          - 14.1.2-0-0
           - 14.1.2-0-1
 
     steps:
