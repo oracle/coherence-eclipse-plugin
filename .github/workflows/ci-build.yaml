@@ -21,11 +21,9 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          - 24.09.3
-          - 24.09.4-SNAPSHOT
-          - 22.06.12-SNAPSHOT
-          - 22.06.11
-          - 14.1.2-0-1
+          - 25.03.1
+          - 22.06.12
+          - 14.1.2-0-2
 
     steps:
     - name: Checkout
