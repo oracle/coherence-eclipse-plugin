@@ -24,8 +24,10 @@ jobs:
       fail-fast: false
       matrix:
         coherenceVersion:
-          - 24.09.4-SNAPSHOT
-          - 22.06.12-SNAPSHOT
+          - 25.09-SNAPSHOT
+          - 25.03.2-SNAPSHOT
+          - 22.06.13-SNAPSHOT
+          - 14.1.2-0-3-SNAPSHOT
 
     steps:
     - name: Checkout
@@ -40,7 +42,7 @@ jobs:
     - name: Print Versions
       run: mvn -version && ant -version
 
-    - name: Build Using Default Version (22.06)
+    - name: Build Using Default Version)
       shell: bash
       run: |
         mvn --file pom.xml --batch-mode -e -DskipTests clean install
