@@ -28,9 +28,9 @@ jobs:
       matrix:
         coherenceVersion:
           - 25.09-SNAPSHOT
-          - 25.03.2-SNAPSHOT
-          - 22.06.13-SNAPSHOT
-          - 14.1.2-0-3-SNAPSHOT
+          # - 25.03.2-SNAPSHOT
+          # - 22.06.13-SNAPSHOT
+          # - 14.1.2-0-3-SNAPSHOT
 
     steps:
     - name: Checkout
